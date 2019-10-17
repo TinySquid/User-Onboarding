@@ -59,7 +59,16 @@ const FormikLoginForm = withFormik({
       .required("Password is required"),
   }),
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-    console.log(values);
+    //STRETCH
+    /*
+    Add to your existing handling so that, if a user inputs their email as waffle@syrup.com, they receive an error message 
+    in their form that says "That email is already taken."
+    */
+    if (values.email === "waffle@syrup.com") {
+      setErrors({ email: "That email is already taken" });
+    } else {
+
+    }
   }
 })(OnBoardingForm)
 
