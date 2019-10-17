@@ -73,9 +73,30 @@ code {
 }
 
 .users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  width: 100%;
+  margin-top: 3%;
+  border-top: 2px solid white;
+}
+
+.user {
+  color: white;
+  background-color: #303030;
   margin: 2%;
-  color: black;
-  list-style-type: none;
+  padding: 1.5%;
+  box-shadow: 0 0 4px 2px rgb(31, 31, 31, .7);
+  border-radius: 30px;
+  min-width: 15%;
+}
+
+.user h2 {
+  text-align: center;
+}
+
+.user:hover {
+  box-shadow: 0 0 20px 5px dodgerblue;
 }
 
 @media (max-width: 1280px){

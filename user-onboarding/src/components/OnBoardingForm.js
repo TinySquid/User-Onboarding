@@ -30,7 +30,7 @@ const OnBoardingForm = ({ values, errors, touched, isSubmitting, addUser }) => {
       </div>
       <div>
         <Field component="select" name="role">
-          <option value="UI/UX Developer">UI/UX Developer</option>
+          <option value="UX/UI Developer">UI/UX Developer</option>
           <option value="Front-End Engineer">Front-End Engineer</option>
           <option value="Back-End Engineer">Back-End Engineer</option>
         </Field>
