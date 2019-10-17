@@ -30,7 +30,7 @@ const OnBoardingForm = ({ values, errors, touched, isSubmitting, addUser }) => {
       </div>
       <div>
         <Field component="select" name="role">
-          <option value="UX-UI Developer">UI/UX Developer</option>
+          <option value="UX/UI Developer">UI/UX Developer</option>
           <option value="Front-End Engineer">Front-End Engineer</option>
           <option value="Back-End Engineer">Back-End Engineer</option>
         </Field>
@@ -52,7 +52,7 @@ const FormikLoginForm = withFormik({
       name: name || "",
       email: email || "",
       password: password || "",
-      role: role || "",
+      role: role || "UX/UI Developer",
       tos: tos || false,
     };
   },
@@ -78,7 +78,7 @@ const FormikLoginForm = withFormik({
     } else {
       axios.post('https://reqres.in/api/users', values)
         .then(response => {
-          // console.log(response);
+          console.log(response.data);
           resetForm();
           setSubmitting(false);
           props.addUser(response.data);
