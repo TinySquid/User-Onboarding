@@ -30,7 +30,7 @@ const OnBoardingForm = ({ values, errors, touched, isSubmitting, addUser }) => {
       </div>
       <div>
         <Field component="select" name="role">
-          <option value="UX/UI Developer">UI/UX Developer</option>
+          <option value="UX-UI Developer">UI/UX Developer</option>
           <option value="Front-End Engineer">Front-End Engineer</option>
           <option value="Back-End Engineer">Back-End Engineer</option>
         </Field>
@@ -58,13 +58,13 @@ const FormikLoginForm = withFormik({
   },
   validationSchema: Yup.object().shape({
     name: Yup.string()
-      .min(4, "Name is invalid")
+      .min(3, "Name is invalid")
       .required("Name is required"),
     email: Yup.string()
       .email("Email is invalid")
       .required("Email is required"),
     password: Yup.string()
-      .min(16, "Password must be 16 characters or longer")
+      .min(8, "Password must be 8 characters or longer")
       .required("Password is required"),
   }),
   handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
