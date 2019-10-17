@@ -1,4 +1,6 @@
 body {
+  color: whitesmoke;
+  background-color: #252525;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -19,8 +21,77 @@ code {
   margin-top: 2%;
 }
 
+.form {
+  text-align: center;
+  width: 25%;
+  background-color: #303030;
+  box-shadow: 0 0 4px 2px rgb(31, 31, 31, .7);
+}
+
+.form h1 {
+  background-color: dodgerblue;
+  padding: 2%;
+  margin: 0;
+  margin-bottom: 5%;
+}
+
+.form input, select {
+  height: 25px;
+  width: 50%;
+  padding: 1%;
+  margin: 2%;
+}
+
+.form select {
+  height: 30px;
+  width: 52%;
+}
+
+.form input[type="checkbox"] {
+  height: 0;
+  width: 0;
+}
+
+.form button {
+  width: 100%;
+  margin-top: 6%;
+  height: 60px;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+
+.form button:hover {
+  background-color: rgb(28, 126, 224);
+}
+
+.form button:active {
+  box-shadow: inset 0 0 20px 5px rgb(31, 31, 31, 0.7);
+}
+
 .users {
   margin: 2%;
   color: black;
   list-style-type: none;
+}
+
+@media (max-width: 1280px){
+  .form {
+    width: 50%;
+  }
+}
+
+@media (max-width: 800px){
+  .form{
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px){
+  .form {
+    width: 95%;
+  }
 }

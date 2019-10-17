@@ -14,7 +14,8 @@ Requirements
 */
 const OnBoardingForm = ({ values, errors, touched, isSubmitting, addUser }) => {
   return (
-    <Form>
+    <Form className="form">
+      <h1>The Form Of Doom</h1>
       <div>
         {touched.name && errors.name && <p>{errors.name}</p>}
         <Field type="text" name="name" placeholder="Enter name" />
