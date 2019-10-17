@@ -2,6 +2,7 @@ import React from 'react'
 
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 /*
 Requirements
@@ -67,7 +68,16 @@ const FormikLoginForm = withFormik({
     if (values.email === "waffle@syrup.com") {
       setErrors({ email: "That email is already taken" });
     } else {
-
+      axios.post('https://reqres.in/api/users', values)
+        .then(response => {
+          console.log(response);
+          resetForm();
+          setSubmitting(false);
+        })
+        .catch(error => {
+          console.log(error);
+          setSubmitting(false);
+        })
     }
   }
 })(OnBoardingForm)
