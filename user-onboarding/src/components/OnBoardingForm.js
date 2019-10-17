@@ -12,7 +12,7 @@ Requirements
     Terms of Service (checkbox)
     A Submit button to send our form data to the server.
 */
-const OnBoardingForm = ({ values, errors, touched, isSubmitting }) => {
+const OnBoardingForm = ({ values, errors, touched, isSubmitting, addUser }) => {
   return (
     <Form>
       <div>
@@ -59,7 +59,7 @@ const FormikLoginForm = withFormik({
       .min(16, "Password must be 16 characters or longer")
       .required("Password is required"),
   }),
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+  handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
     //STRETCH
     /*
     Add to your existing handling so that, if a user inputs their email as waffle@syrup.com, they receive an error message 
@@ -70,9 +70,10 @@ const FormikLoginForm = withFormik({
     } else {
       axios.post('https://reqres.in/api/users', values)
         .then(response => {
-          console.log(response);
+          // console.log(response);
           resetForm();
           setSubmitting(false);
+          props.addUser(response.data);
         })
         .catch(error => {
           console.log(error);
