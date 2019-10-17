@@ -14,8 +14,8 @@ const App = () => {
     <div className="app">
       <Form addUser={addUser} />
       <ul className="users">
-        {users.map((user, idx) => (
-          <li key={user.id}>{user.id} | {user.name} | {user.email} | {user.password}</li>
+        {users.map(user => (
+          <li key={user.id}>{user.id} | {user.name} | {user.email} | {user.password} | {user.role}</li>
         ))}
       </ul>
     </div>

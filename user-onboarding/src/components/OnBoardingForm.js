@@ -28,7 +28,13 @@ const OnBoardingForm = ({ values, errors, touched, isSubmitting, addUser }) => {
         <Field type="password" name="password" placeholder="Enter password" />
       </div>
       <div>
-
+        <Field component="select" name="role">
+          <option value="UI/UX Developer">UI/UX Developer</option>
+          <option value="Front-End Engineer">Front-End Engineer</option>
+          <option value="Back-End Engineer">Back-End Engineer</option>
+        </Field>
+      </div>
+      <div>
         <label>
           <Field type="checkbox" name="tos" checked={values.tos} />
           Accept TOS
@@ -40,11 +46,12 @@ const OnBoardingForm = ({ values, errors, touched, isSubmitting, addUser }) => {
 }
 
 const FormikLoginForm = withFormik({
-  mapPropsToValues({ name, email, password, tos }) {
+  mapPropsToValues({ name, email, password, role, tos }) {
     return {
       name: name || "",
       email: email || "",
       password: password || "",
+      role: role || "",
       tos: tos || false,
     };
   },

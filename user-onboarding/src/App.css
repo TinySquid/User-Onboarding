@@ -22,4 +22,5 @@ code {
 .users {
   margin: 2%;
   color: black;
+  list-style-type: none;
 }
